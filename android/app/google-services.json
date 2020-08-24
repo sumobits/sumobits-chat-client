@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "280178140953",
+    "firebase_url": "https://sumobits-chat.firebaseio.com",
+    "project_id": "sumobits-chat",
+    "storage_bucket": "sumobits-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280178140953:android:01e0c2700c696b3b6dc788",
+        "android_client_info": {
+          "package_name": "com.sumobits.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280178140953-t5qhnefsf0bu3coq86ci38ne6o3b6fki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sumobits.chat",
+            "certificate_hash": "632a122f76f9339a9e2d8e2d1a4759c302b83083"
+          }
+        },
+        {
+          "client_id": "280178140953-358jm81cor67jdgp8mm2uh349sdjd1m9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_j4CdavYsEgXw3YfSeo3wIBmVVKI0K-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280178140953-358jm81cor67jdgp8mm2uh349sdjd1m9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
