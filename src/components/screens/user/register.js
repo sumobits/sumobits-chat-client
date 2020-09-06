@@ -11,14 +11,17 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import LoadingIndicator from '../../common/loading';
 import { Colors, Styles } from '../../../utils';
 
 const RegisterScreen = props => {
-    const { context, navigation } = props;
+    const { 
+        actions: { handleCreate },
+        navigation,
+        state: { activeUser },
+    } = props;
     const [ email, setEmail ] = useState(); 
-    const [ firstName, setFirstName ] = useState();
     const [ nickName, setNickName ] = useState();
+    const [ firstName, setFirstName ] = useState();
     const [ lastName, setLastName ] = useState();
     const [ password, setPassword ] = useState(); 
     const [ verifyPassword, setVerifyPassword ] = useState();
@@ -35,7 +38,15 @@ const RegisterScreen = props => {
             return;
         }
 
-        context.create(firstName, lastName, email, nickName, password);
+        handleCreate({
+            variables: {
+                firstName,
+                lastName,
+                email,
+                password,
+                nickName,
+            }
+        });
     };
 
     return (
@@ -71,16 +82,8 @@ const RegisterScreen = props => {
                 </View>
             </ScrollView>
             {
-                context.execution.loading && 
-                    <LoadingIndicator />
-            }
-            {
-                context.execution.error && 
-                    Alert.alert('Error Creating User', context.execution.error.message)
-            }
-            {
-                context.user && 
-                    Alert.alert('Success', 'User created!', [
+                activeUser &&
+                Alert.alert('Success', 'User created!', [
                     {
                         onPress: () => {
                             navigation.navigate('login');

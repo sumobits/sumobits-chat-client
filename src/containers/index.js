@@ -1,5 +1,5 @@
 /**
  * @format
  */
-export UserContainer from './user';
+export AuthContainer from './auth';
 export MainContainer from './main';

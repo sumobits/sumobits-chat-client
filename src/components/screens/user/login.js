@@ -12,33 +12,39 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import LoadingIndicator from '../../common/loading';
 import { Colors, Styles } from '../../../utils';
 import { IMAGE_CALLOUT_LIGHT } from '../../../assets';
 
 const LoginScreen = props => {
-    const { context , navigation } = props;
-    const [ email, setEmail ] = useState(context.user && context.user.email);
+    const {
+        actions: {
+            handleLogin,
+        },
+        navigation,
+    } = props;
+    const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
 
     const onLogin = () => {
         if (!email || !password) {
-            Alert.alert('Validation Error', 
-                'One or more fields is missing.');
+            Alert.alert('Validation Error', 'One or more fields is missing.');
             return;
         }
 
-        context.login(email, password);
+        handleLogin({
+            variables: {
+                email,
+                password,
+            }
+        });
     };
 
     const onRegister = () => {
-        navigation.setOptions(context);
         navigation.navigate('register');
     };
 
     return (
-        <>
-            <ScrollView style={styles.formContainer} >
+        <ScrollView style={styles.formContainer} >
                     <View style={styles.heading}>
                         <Image source={IMAGE_CALLOUT_LIGHT} style={styles.headingImg}/>
                         <Text style={styles.headingText}>
@@ -63,12 +69,7 @@ const LoginScreen = props => {
                         </TouchableOpacity>
                         </View>
                     </View>
-            </ScrollView>
-            {context.execution.loading && 
-                <LoadingIndicator />}
-            {context.execution.error && 
-                Alert.alert('Error', context.execution.error.message)}
-        </>
+        </ScrollView>
     );
 };
 

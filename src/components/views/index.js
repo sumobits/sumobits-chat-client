@@ -1,5 +1,5 @@
 /**
  * @format
  */
-export LoginView from './login';
+export AuthView from './auth';
 export MainView from './main';

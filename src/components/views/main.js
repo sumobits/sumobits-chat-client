@@ -1,7 +1,7 @@
 /**
  * @format
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons/MaterialCommunityIcons';
 import { 
@@ -106,7 +106,8 @@ const Tabs = () => {
     );
 }
 
-const MainView = () => {
+const MainView = props => {
+    const {} = props;
     return(
         <Tabs />
     );

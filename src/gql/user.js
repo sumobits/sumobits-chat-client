@@ -1,13 +1,13 @@
 /**
  * @format
  */
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/client';
 
 export const createGql = gql`
     mutation createUser($firstName: String!, $lastName: String!, 
-        $email: String!, $nickname: String!, $password: String!) {
+        $email: String!, $nickName: String!, $password: String!) {
             createUser(firstName: $firstName, lastName: $lastName,
-                email: $email, nickname: $nickname, password: $password) {
+                email: $email, nickname: $nickName, password: $password) {
                     id
                     email
                     nickname
@@ -22,7 +22,7 @@ export const findGql = gql`
         findUser(id: $id) {
             id
             email
-            nickname,
+            nickname
             contacts {
                 id
                 email
@@ -37,7 +37,7 @@ export const findGql = gql`
 
 export const loginGql = gql`
     mutation loginUser($email: String!, $password: String!) {
-        loginUser(email: $email, password: $password) {
+        loginUser(email: $email, password: $password){
             id
             email
             nickname

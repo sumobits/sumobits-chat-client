@@ -1,7 +1,7 @@
 /**
  * @format
  */
-export { LoginScreen, RegisterScreen } from './login';
+export { LoginScreen, RegisterScreen } from './user';
 export { 
     ContactScreen, 
     ConversationScreen,

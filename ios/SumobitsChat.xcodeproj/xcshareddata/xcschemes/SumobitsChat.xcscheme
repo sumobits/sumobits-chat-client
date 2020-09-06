@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "SumobitsChat.app"
-               BlueprintName = "SumobitsChat"
-               ReferencedContainer = "container:SumobitsChat.xcodeproj">
+               BuildableName = "SumoChat.app"
+               BlueprintName = "SumoChat"
+               ReferencedContainer = "container:SumoChat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "SumobitsChatTests.xctest"
-               BlueprintName = "SumobitsChatTests"
-               ReferencedContainer = "container:SumobitsChat.xcodeproj">
+               BuildableName = "SumoChatTests.xctest"
+               BlueprintName = "SumoChatTests"
+               ReferencedContainer = "container:SumoChat.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SumobitsChat.app"
-            BlueprintName = "SumobitsChat"
-            ReferencedContainer = "container:SumobitsChat.xcodeproj">
+            BuildableName = "SumoChat.app"
+            BlueprintName = "SumoChat"
+            ReferencedContainer = "container:SumoChat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "SumobitsChat.app"
-            BlueprintName = "SumobitsChat"
-            ReferencedContainer = "container:SumobitsChat.xcodeproj">
+            BuildableName = "SumoChat.app"
+            BlueprintName = "SumoChat"
+            ReferencedContainer = "container:SumoChat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
