@@ -11,7 +11,7 @@ import { Colors } from '../../utils';
 
 const LoadingIndicator = () => {
     return (
-        <View style={[styles.container, styles.horizontal]}>
+        <View style={[ styles.container, styles.horizontal ]}>
             <ActivityIndicator size='large' color={Colors.primary} />
         </View>
     );

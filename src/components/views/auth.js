@@ -12,7 +12,7 @@ import {
 import LoadingIndicator from '../common/loading';
 import { Colors } from '../../utils';
 
-const RegisterScreenWrapper = ({navigation, route}) => {
+const RegisterScreenWrapper = ({ navigation, route }) => {
     return (
         <AuthContext.Consumer>
             {context => {
@@ -24,7 +24,7 @@ const RegisterScreenWrapper = ({navigation, route}) => {
     );
 };
 
-const LoginScreenWrapper = ({navigation, route}) => {
+const LoginScreenWrapper = ({ navigation, route }) => {
     return (
         <AuthContext.Consumer>
             {context => {
@@ -36,12 +36,13 @@ const LoginScreenWrapper = ({navigation, route}) => {
     );
 };
 
+const StackNavigator = createStackNavigator();
+
 const AuthView = props => {
     const {
         error,
         loading,
     } = props;
-    const StackNavigator = createStackNavigator();
 
     return (
         <>

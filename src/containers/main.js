@@ -2,17 +2,14 @@
  * @format
  */
 import React, { useState } from 'react';
-import { AuthContext } from '../contexts';
-import MainView from '../components/views/main';
+import { MainView } from '../components/views';
 
 const MainContainer = props => {
-    const { activeUser} = props;
+    const { activeUser } = props;
     return (
-        <AuthContext.Consumer>
-            {context => {
-                <MainView {...context} />
-            }}
-        </AuthContext.Consumer>
+        <>
+            <MainView activeUser={activeUser} />
+        </>
     );
 };
 

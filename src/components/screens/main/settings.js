@@ -17,6 +17,6 @@ const SettingsScreen = props => {
     return (
         <FlatList />
     );
-}
+};
 
 export default SettingsScreen;

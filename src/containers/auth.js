@@ -13,10 +13,10 @@ import {
 } from '../gql/user';
 
 const AuthContainer = () => {
-    const [ activeUser, setActiveUser] = useState(false);
+    const [ activeUser, setActiveUser ] = useState(false);
     const [ loginSuccess, setLoginSuccess ] = useState(false);
     const [ error, setError ] = useState(false);
-    const [handleCreate, { loading: createLoading }] = useMutation(createGql, {
+    const [ handleCreate, { loading: createLoading } ] = useMutation(createGql, {
         onCompleted: d => {
             setActiveUser(d.createUser);
             setError(false);
@@ -26,7 +26,7 @@ const AuthContainer = () => {
             setError(e.message);
         },
     });
-    const [handleLogin, { loading: loginLoading }] = useMutation(loginGql, {
+    const [ handleLogin, { loading: loginLoading } ] = useMutation(loginGql, {
         onCompleted: d => {
             setActiveUser(d.loginUser);
             setError(false);
@@ -41,9 +41,7 @@ const AuthContainer = () => {
             const activeUser = data.loginUser;
             cache.writeQuery({
                 query: findGql,
-                data: {
-                    findUser: activeUser,
-                }
+                data: { findUser: activeUser, }
             });
         },
     });
@@ -53,17 +51,13 @@ const AuthContainer = () => {
             handleCreate,
             handleLogin,
         },
-        state: {
-            activeUser
-        },
+        state: { activeUser },
     };
 
     if (loginSuccess) {
         return (
-            <AuthContext.Provider value={context.activeUser}>
-                <MainContainer />;
-            </AuthContext.Provider>
-        )
+            <MainContainer activeUser={activeUser} />
+        );
     } else {
         return (
             <AuthContext.Provider value={context}>

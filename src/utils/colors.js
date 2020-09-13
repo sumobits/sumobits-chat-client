@@ -155,4 +155,4 @@ export default Colors = {
     snow: '#FFFAFA',
     lightyellow: '#FFFFE0',
     ivory: '#FFFFF0',
-}
+};

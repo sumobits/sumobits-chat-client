@@ -14,6 +14,6 @@ const NewsScreen = props => {
     return (
         <FlatList />
     );
-}
+};
 
 export default NewsScreen;

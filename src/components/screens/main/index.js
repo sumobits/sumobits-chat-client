@@ -2,6 +2,6 @@
  * @format
  */
 export ContactScreen from './contact';
-export ConversationsScreen from './conversation';
+export ConversationScreen from './conversation';
 export NewsScreen from './news';
 export SettingsScreen from './settings';

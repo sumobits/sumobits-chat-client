@@ -41,7 +41,9 @@ export default Styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     tabBar: { 
-        backgroundColor: Colors.quaternary 
+        backgroundColor: Colors.quaternary,
+        paddingBottom: 5,
+        paddingTop: 5,
     },
     tabHeader: {
         backgroundColor: Colors.quaternary,

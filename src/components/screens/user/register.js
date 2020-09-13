@@ -76,8 +76,8 @@ const RegisterScreen = props => {
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity onPress={onSubmit}
-                        style={[Styles.button, styles.button]}>
-                            <Text style={[Styles.buttonText, styles.buttonText]}>Create</Text>
+                        style={[ Styles.button, styles.button ]}>
+                            <Text style={[ Styles.buttonText, styles.buttonText ]}>Create</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
@@ -98,30 +98,22 @@ const RegisterScreen = props => {
 };
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: Colors.quaternary,
-    },
+    button: { backgroundColor: Colors.quaternary, },
     buttonContainer: {
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         marginLeft: 30,
         width: '85%',
     },
-    buttonText: {
-        color: Colors.ghostwhite,
-    },
-    form: {
-        padding: 10,
-    },
+    buttonText: { color: Colors.ghostwhite, },
+    form: { padding: 10, },
     formContainer: {
         alignContent: 'center',
         backgroundColor: Colors.ghostwhite,
         color: Colors.base,
         flex: 1,
     },
-    scrollContainer: {
-        paddingBottom: 50,
-    },
+    scrollContainer: { paddingBottom: 50, },
 });
 
 export default RegisterScreen;

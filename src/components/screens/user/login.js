@@ -17,9 +17,7 @@ import { IMAGE_CALLOUT_LIGHT } from '../../../assets';
 
 const LoginScreen = props => {
     const {
-        actions: {
-            handleLogin,
-        },
+        actions: { handleLogin, },
         navigation,
     } = props;
     const [ email, setEmail ] = useState();
@@ -59,13 +57,13 @@ const LoginScreen = props => {
                             style={Styles.input} />
                         <View styles={styles.buttonContainer}>
                             <TouchableOpacity
-                                onPress={onLogin} style={[Styles.button, styles.button]}>
-                                <Text style={[Styles.buttonText, styles.buttonText]}>Login</Text>
+                                onPress={onLogin} style={[ Styles.button, styles.button ]}>
+                                <Text style={[ Styles.buttonText, styles.buttonText ]}>Login</Text>
                             </TouchableOpacity>
                         </View>
                         <View>
                         <TouchableOpacity onPress={onRegister}>
-                            <Text style={[Styles.link, styles.createLink]}>Create Account</Text>
+                            <Text style={[ Styles.link, styles.createLink ]}>Create Account</Text>
                         </TouchableOpacity>
                         </View>
                     </View>
@@ -74,29 +72,21 @@ const LoginScreen = props => {
 };
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: Colors.quaternary,
-    },
+    button: { backgroundColor: Colors.quaternary, },
     buttonContainer: {
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         marginLeft: 30,
         width: '85%',
     },
-    buttonGradient: {
-        flex: 1,
-    },
-    buttonText: {
-        color: Colors.ghostwhite,
-    },
+    buttonGradient: { flex: 1, },
+    buttonText: { color: Colors.ghostwhite, },
     createLink: {
         alignSelf: 'center',
         color: Colors.quaternary,
         fontSize: 18,
     },
-    form: {
-        padding: 10,
-    },
+    form: { padding: 10, },
     formContainer: {
         alignContent: 'center',
         backgroundColor: Colors.ghostwhite,

@@ -1,115 +1,96 @@
 /**
  * @format
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from 'react-native-vector-icons/MaterialCommunityIcons';
-import { 
-    ContactList, 
-    MessageList,
-    NewsList,
-    SettingsList
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {
+    ContactScreen,
+    ConversationScreen,
+    NewsScreen,
+    SettingsScreen
 } from '../screens';
 import { Colors, Styles } from '../../utils';
 
-const Tabs = () => {
-    const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
+const MainView = () => {
     return (
         <Tab.Navigator
-            backBehavior='history'
-            initialRouteName='news'
-            lazy={true}
-            tabBarOptions={{
-                activeTintColor: Colors.ghostwhite,
-                inactiveTintColor: Colors.white,
-                style: Styles.tabBar,
-            }}
-        >
+                backBehavior='history'
+                initialRouteName='conversations'
+                lazy={true}
+                screenOptions={({ route }) => ({
+                    tabBarIcon: ({ focused, color, size }) => {
+                        let iconName;
+
+                        if (route.name === 'conversations') {
+                            iconName = 'chat';
+                        }
+                        else if (route.name === 'contacts') {
+                            iconName = 'contacts';
+                        }
+                        else if (route.name === 'news') {
+                            iconName = 'newspaper-variant';
+                        }
+                        else if (route.name === 'settings') {
+                            iconName = 'account-settings';
+                        }
+
+                        if (focused) {
+                            iconName = (`${iconName  }-outline`);
+                        }
+
+                        return <MaterialCommunityIcons
+                            color={color}
+                            name={iconName}
+                            size={size}
+                        />;
+                    },
+                })}
+                tabBarOptions={{
+                    activeTintColor: Colors.ghostwhite,
+                    inactiveTintColor: Colors.white,
+                    style: Styles.tabBar,
+                }}
+            >
             <Tab.Screen
-                component={NewsList}
-                name='news'
+                component={ConversationScreen}
+                name='conversations'
                 options={{
                     headerStyle: Styles.tabHeader,
-                    tabBarLabel: 'News',
-                    tabBarIcon: ({
-                        color,
-                        size
-                    }) => (
-                            <MaterialCommunityIcons
-                                color={color}
-                                name="calendar-clock"
-                                size={size}
-                            />
-                        ),
-                    title: 'News',
+                    tabBarLabel: 'Conversations',
+                    title: 'Conversations',
                 }}
             />
             <Tab.Screen
-                component={MessageList}
-                name='message'
-                options={{
-                    headerStyle: Styles.tabHeader,
-                    tabBarLabel: 'Messages',
-                    tabBarIcon: ({
-                        color,
-                        size
-                    }) => (
-                            <MaterialCommunityIcons
-                                color={color}
-                                name="calendar-clock"
-                                size={size}
-                            />
-                        ),
-                    title: 'Messages',
-                }}
-            />
-            <Tab.Screen
-                component={ContactList}
+                component={ContactScreen}
                 name='contacts'
                 options={{
                     headerStyle: Styles.tabHeader,
                     tabBarLabel: 'Contacts',
-                    tabBarIcon: ({
-                        color,
-                        size
-                    }) => (
-                            <MaterialCommunityIcons
-                                color={color}
-                                name="calendar-clock"
-                                size={size}
-                            />
-                        ),
                     title: 'Contacts',
                 }}
             />
             <Tab.Screen
-                component={SettingsList}
+                component={NewsScreen}
+                name='news'
+                options={{
+                    headerStyle: Styles.tabHeader,
+                    tabBarLabel: 'News',
+                    title: 'News',
+                }}
+            />
+            <Tab.Screen
+                component={SettingsScreen}
                 name='settings'
                 options={{
                     headerStyle: Styles.tabHeader,
                     tabBarLabel: 'Settings',
-                    tabBarIcon: ({
-                        color,
-                        size
-                    }) => (
-                            <MaterialCommunityIcons
-                                color={color}
-                                name="calendar-clock"
-                                size={size}
-                            />
-                        ),
                     title: 'Settings',
                 }}
             />
         </Tab.Navigator>
-    );
-}
-
-const MainView = props => {
-    const {} = props;
-    return(
-        <Tabs />
     );
 };
 

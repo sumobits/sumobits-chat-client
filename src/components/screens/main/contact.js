@@ -17,6 +17,6 @@ const ContactScreen = props => {
     return (
         <FlatList />
     );
-}
+};
 
 export default ContactScreen;
